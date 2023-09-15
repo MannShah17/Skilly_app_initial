@@ -1,0 +1,10 @@
+.cursor {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 220px;
+  left: 220px;
+  background: url(/icons/cursor.svg);
+  z-index: 300;
+}

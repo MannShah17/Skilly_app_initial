@@ -1,0 +1,70 @@
+.footerContainer {
+  position: absolute;
+  left: 20px;
+  bottom: 30px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 15px;
+}
+
+.recorder {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background: #ef4444;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+
+.stopRecorder {
+  height: 20px;
+  width: 20px;
+  border-radius: 2px;
+}
+
+.recorder:hover {
+  border: 3px solid #ffffff;
+}
+
+.button {
+  border: 0;
+  background: transparent;
+  box-sizing: border-box;
+  width: 0;
+  height: 20px;
+
+  border-color: transparent transparent transparent #3b82f6;
+  transition: 100ms all ease;
+  cursor: pointer;
+
+  border-style: solid;
+  border-width: 12px 0 12px 22px;
+  border-radius: 2px;
+}
+
+.button.paused {
+  border-style: double;
+  border-width: 0px 0 0px 20px;
+  border-radius: 0px;
+}
+
+.button:hover {
+  border-color: transparent transparent transparent #3b82f680;
+}
+
+.progressBackdrop {
+  height: 5px;
+  width: 90%;
+  background-color: #f0ffff30;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.progressBar {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  background-color: #3b82f6;
+}
