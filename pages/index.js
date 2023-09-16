@@ -54,7 +54,7 @@ export default function Home() {
         <div className='code-editor-code'>
           <textarea
             className='code-input'
-            placeholder='Type & Test here'
+            placeholder='Write your code here'
           ></textarea>
           <div className='code-output'></div>
         </div>
