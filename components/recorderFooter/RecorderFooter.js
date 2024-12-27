@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import styles from './RecorderFooter.module.css';
+import React, { useState } from "react";
+import styles from "./RecorderFooter.module.css";
 
 export default function RecorderFooter({
   onStart = console.log,
@@ -12,6 +12,7 @@ export default function RecorderFooter({
   progress,
   isPlayerVisible,
   recordedTime,
+  onUpload = console.log, // New prop for upload functionality
 }) {
   const toggleRecordingHandler = (event) => {
     isRecording ? onStop(event) : onStart(event);
@@ -43,6 +44,9 @@ export default function RecorderFooter({
               style={{ width: progress }}
             ></div>
           </div>
+          <button onClick={onUpload} className={styles.uploadButton}>
+            Upload
+          </button>
         </>
       )}
     </div>
