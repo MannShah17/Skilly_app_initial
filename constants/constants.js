@@ -1,9 +1,9 @@
 export const defaultEventRecorderTemplate = {
-  type: '',
-  selector: '',
+  type: "",
+  selector: "",
   offsetX: 0,
   offsetY: 0,
-  data: '',
+  data: "",
 };
 
 export const FPS = 16;

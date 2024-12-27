@@ -1,0 +1,68 @@
+/* Home.module.css */
+
+.code-editor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  background-color: #f7f7f7; /* Light gray background for better contrast */
+  padding: 20px;
+  font-family: "Inter", sans-serif;
+}
+
+.runButton {
+  background-color: #4caf50; /* Green background */
+  color: #fff; /* White text */
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  margin: 20px 0;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.runButton:hover {
+  background-color: #45a049; /* Slightly darker green on hover */
+  transform: scale(1.05); /* Slightly enlarge button */
+}
+
+.runButton:active {
+  background-color: #3e8e41; /* Even darker green on click */
+  transform: scale(0.95); /* Slightly shrink on click */
+}
+
+.output {
+  width: 80%;
+  max-width: 800px;
+  background-color: #282c34; /* Dark background for output */
+  color: #61dafb; /* Light blue text color */
+  font-family: "Courier New", Courier, monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+  overflow-x: auto; /* Enable horizontal scroll for long lines */
+  white-space: pre-wrap; /* Keep spacing intact while wrapping lines */
+}
+
+@media (max-width: 600px) {
+  .code-editor {
+    padding: 10px;
+  }
+
+  .runButton {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .output {
+    width: 95%;
+    font-size: 12px;
+  }
+}

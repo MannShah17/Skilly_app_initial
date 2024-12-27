@@ -11,6 +11,12 @@ export default function CodeEditor({ code, setCode }) {
         defaultValue={code}
         theme="vs-dark"
         onChange={(value) => setCode(value)}
+        options={{
+          minimap: { enabled: false },
+          lineNumbers: "on",
+          scrollBeyondLastLine: false,
+          automaticLayout: true,
+        }}
       />
     </div>
   );

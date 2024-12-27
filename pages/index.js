@@ -13,6 +13,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const [code, setCode] = useState("// Write your C code here");
+  const [output, setOutput] = useState("");
   const {
     recordings,
     recorderElementRef,
@@ -38,6 +39,23 @@ export default function Home() {
     console.log("Upload the recorded video");
   };
 
+  const runCode = async () => {
+    try {
+      const response = await fetch("/api/compile", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ code }),
+      });
+      const result = await response.json();
+      setOutput(result.output);
+    } catch (error) {
+      console.error("Error running code:", error);
+      setOutput("Error running code");
+    }
+  };
+
   return (
     <div className="code-editor" ref={recorderElementRef}>
       <Head>
@@ -47,6 +65,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <CodeEditor code={code} setCode={setCode} />
+      <button onClick={runCode} className={styles.runButton}>
+        Run Code
+      </button>
+      <pre className={styles.output}>{output}</pre>
       <Cursor cursorRef={cursorRef} />
       <RecorderFooter
         isRecording={isRecording}
