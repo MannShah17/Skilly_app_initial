@@ -1,64 +1,101 @@
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #1e1e2f;
+  color: #ffffff;
+}
+
 .code-editor {
-  background-color: #1e1e1e;
-  color: #fff;
   display: flex;
   flex-direction: column;
   height: 100vh;
-  overflow: hidden;
-  font-family: 'Fira Code', monospace;
 }
 
 .code-editor-content {
-  flex-grow: 1;
   display: flex;
-  padding: 16px;
-}
-
-.code-editor-code {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  width: 70%;
-  background-color: #2a2a2a;
-  padding: 16px;
-  border-radius: 4px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  flex: 1;
   overflow: hidden;
 }
 
 .code-input {
-  flex-grow: 1;
-  width: 100%;
-  font-size: 16px;
-  line-height: 1.5;
+  width: 50%;
+  height: 100%;
+  background-color: #282c34;
+  color: #dcdcdc;
   border: none;
-  outline: none;
-  background-color: transparent;
+  font-family: 'Fira Code', monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  padding: 15px;
   resize: none;
-  color: #fff;
-  caret-color: #1abc9c;
+  outline: none;
 }
 
-.code-input::selection {
-  background-color: rgba(26, 188, 156, 0.5);
+.code-input::placeholder {
+  color: #636d83;
 }
 
-.code-output {
-  padding: 16px;
-  border-top: 1px solid #2a2a2a;
-  background-color: #2a2a2a;
-  overflow-y: auto;
-  color: #fff;
+iframe {
+  width: 50%;
+  border: none;
+  background-color: #ffffff;
 }
 
-.code-editor-header {
+iframe {
+  box-shadow: -5px 0px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Styling the Cursor */
+.cursor {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background-color: #ff5722;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+}
+
+/* Recorder Footer */
+.recorder-footer {
+  background-color: #2b2d42;
+  padding: 10px 15px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 8px 16px;
-  background-color: #1abc9c;
-  font-size: 18px;
-  font-weight: bold;
-  border-radius: 4px 4px 0 0;
-  color: #fff;
+  justify-content: space-between;
+  border-top: 1px solid #3f404a;
+}
+
+.recorder-footer button {
+  background-color: #8d99ae;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.recorder-footer button:hover {
+  background-color: #edf2f4;
+  color: #2b2d42;
+}
+
+.recorder-footer .progress-bar {
+  flex: 1;
+  height: 5px;
+  background-color: #3f404a;
+  margin: 0 15px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.recorder-footer .progress-bar div {
+  width: 0;
+  height: 100%;
+  background-color: #ef233c;
+  transition: width 0.3s ease;
 }

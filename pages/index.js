@@ -1,7 +1,5 @@
 import Head from "next/head";
-import Image from "next/image";
 import { Inter } from "@next/font/google";
-import styles from "../styles/Home.module.css";
 import { useEffect, useState } from "react";
 import useRecorder from "../lib/hooks/useRecorder";
 import RecorderFooter from "../components/recorderFooter/RecorderFooter";
@@ -64,20 +62,26 @@ export default function Home() {
         progress={progress}
       />
       <main className="code-editor-content" ref={recorderElementRef}>
-        <div style={{ display: "flex", height: "100vh" }}>
-          <iframe
-            style={{ width: "50%", border: "none" }}
-            srcDoc={htmlContent}
-            title="Output"
-          ></iframe>
-          <textarea
-            className="code-input"
-            style={{ width: "50%", padding: "10px", fontSize: "16px" }}
-            placeholder="Write your HTML code here"
-            // value={htmlContent}
-            onChange={handleInputChange}
-          ></textarea>
-        </div>
+        {/* <div style={{ display: "flex", height: "100vh" }}> */}
+        <textarea
+          className="code-input"
+          // style={{ width: "50%", padding: "10px", fontSize: "16px" }}
+          placeholder="Write your HTML code here"
+          onChange={handleInputChange}
+        ></textarea>
+        <iframe
+          style={{ width: "50%", border: "none", height: "50%" }}
+          srcDoc={htmlContent}
+          title="Output"
+        ></iframe>
+
+        {/* <textarea
+          className="code-input"
+          // style={{ width: "50%", padding: "10px", fontSize: "16px" }}
+          placeholder="Write your HTML code here"
+          onChange={handleInputChange}
+        ></textarea> */}
+        {/* </div> */}
       </main>
     </div>
   );
