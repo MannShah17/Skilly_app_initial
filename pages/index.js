@@ -84,11 +84,23 @@ export default function Home() {
         progress={progress}
         onUpload={handleUpload}
       />
+<<<<<<< HEAD
       <CodeEditor code={code} setCode={setCode} editorRef={editorRef} />
       <button onClick={runCode} className={styles.runButton}>
         Run Code
       </button>
       <pre className={styles.output}>{output}</pre>
+=======
+      <main className='code-editor-content' ref={recorderElementRef}>
+        <div className='code-editor-code'>
+          <textarea
+            className='code-input'
+            placeholder='Type & Test here'
+          ></textarea>
+          <div className='code-output'></div>
+        </div>
+      </main>
+>>>>>>> parent of e88b612 (done)
     </div>
   );
 }
