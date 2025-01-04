@@ -42,7 +42,7 @@ export default function UserDashboard() {
           <Grid container spacing={4}>
             {videos.length === 0 ? (
               <Grid item xs={12}>
-                <Typography variant="h6" align="center" color="textSecondary">
+                <Typography variant="h6" align="center" color="white">
                   No videos available. Start creating some!
                 </Typography>
               </Grid>
