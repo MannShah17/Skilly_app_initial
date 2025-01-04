@@ -9,7 +9,6 @@ export default function EditVideo() {
   const router = useRouter();
   const { id } = router.query;
   const [recordingData, setRecordingData] = useState(null);
-  const [htmlContent, setHtmlContent] = useState("");
 
   useEffect(() => {
     const fetchRecording = async () => {
@@ -17,7 +16,6 @@ export default function EditVideo() {
         const response = await fetch(`/api/getRecording?id=${id}`);
         const data = await response.json();
         setRecordingData(data);
-        setHtmlContent(data.htmlContent);
       }
     };
 
@@ -30,10 +28,6 @@ export default function EditVideo() {
     recordingData?.recorderEndTime,
     recordingData?.recordedAudio
   );
-
-  const handleInputChange = (event) => {
-    setHtmlContent(event.target.value);
-  };
 
   return (
     <div className="code-editor">
@@ -53,14 +47,19 @@ export default function EditVideo() {
         <textarea
           className="code-input"
           placeholder="Write your HTML code here"
-          value={htmlContent}
-          onChange={handleInputChange}
+          value={recordingData?.htmlContent || ""}
+          readOnly
         ></textarea>
         <iframe
           style={{ width: "50%", border: "none", height: "50%" }}
-          srcDoc={htmlContent}
+          srcDoc={recordingData?.htmlContent || ""}
           title="Output"
         ></iframe>
+        <div className="controls">
+          <button onClick={() => setIsPlaying(!isPlaying)}>
+            {isPlaying ? "Pause" : "Play"}
+          </button>
+        </div>
       </main>
     </div>
   );
